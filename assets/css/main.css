@@ -1,15 +1,3 @@
-/**
-* Template Name: QuickStart
-* Template URL: https://bootstrapmade.com/quickstart-bootstrap-startup-website-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -1946,4 +1934,112 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/* Default styles (for larger screens) */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 1024px) {
+  img {
+    width: 80%;
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  img {
+    width: 100%;
+  }
+}
+
+/* Adjust container width */
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* Make sure the navbar and text are responsive */
+.navmenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.navmenu a {
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .navmenu a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* three images  */
+@media (max-width: 768px) {
+  .about-images .col-lg-6:nth-child(2) { 
+    display: none; 
+  }
+  .about-images .col-lg-6:first-child img {
+    width: 100%; /* Make the image take full width */
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  img[src="assets/img/feature_2.png"] {
+    display: none;
+  }
+}
+
+.service-item {
+  display: flex;
+  align-items: center; /* Align icon and text */
+  gap: 15px; /* Space between icon and text */
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8f9fa; /* Light background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .icon {
+  font-size: 40px;
+  color: #007bff; /* Icon color */
+  flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+.service-item div {
+  flex-grow: 1; /* Allows text to take remaining space */
+}
+
+.service-item h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.service-item p {
+  margin: 5px 0 10px;
+  color: #555;
+}
+
+.read-more {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
 }
