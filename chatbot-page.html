@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BlueAura</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/BlueAura_logo.png" rel="icon">
+  <link href="assets/img/BlueAura_logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- chatbot css  -->
+  <link rel="stylesheet" href="https://chat.blueaura.in/static/style.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Custom styles for the chatbot containers */
+    .chatbots-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .chatbot-container-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    
+    .chatbot-box {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .chatbot-box:hover {
+      transform: translateY(-10px);
+    }
+    
+    /* Style for first chatbot */
+    .chatbot-1 {
+      border-top: 5px solid #3498db;
+    }
+    
+    .chatbot-1 #chat-header {
+      background: #3498db;
+      color: white;
+    }
+    
+    /* Style for second chatbot */
+    .chatbot-2 {
+      border-top: 5px solid #2ecc71;
+    }
+    
+    .chatbot-2 #chat-header {
+      background: #2ecc71;
+      color: white;
+    }
+    
+    .chatbot-2 #chatbox {
+      background: #f1f8f4;
+    }
+    
+    /* Style for third chatbot */
+    .chatbot-3 {
+      border-top: 5px solid #9b59b6;
+    }
+    
+    .chatbot-3 #chat-header {
+      background: #9b59b6;
+      color: white;
+    }
+    
+    .chatbot-3 #chatbox {
+      background: #f5eef8;
+    }
+    
+    .chatbot-3 #user-input {
+      border: 2px solid #9b59b6;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .chatbot-container-wrapper {
+        flex-direction: column;
+      }
+      
+      .chatbot-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/BlueAura_logo.png" alt="">
+        <h1 class="sitename">BlueAura</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <!-- Main Content Section with Chatbots -->
+  <main id="main">
+    <section class="chatbots-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Chatbot Solutions</h2>
+          <p>Explore our versatile chatbot implementations with different styles and functionalities.</p>
+        </div>
+        
+        <div class="chatbot-container-wrapper">
+          <!-- Chatbot 1 - Default Style -->
+          <div class="chatbot-box chatbot-1">
+            <div id="chat-header">
+              <img src="https://chat.blueaura.in/static/BlueAura_logo.png" alt="BlueAura Logo" id="chat-logo">
+              Standard Chatbot
+            </div>
+            <div id="chatbox"></div>
+            <div id="chat-input-container">
+              <input type="text" id="user-input-1" placeholder="Type your message..." aria-label="Type your message"
+                onkeypress="handleKeyPress(event, 'chatbox-1')">
+              <button id="send-button-1" aria-label="Send message">➤</button>
+            </div>
+          </div>
+          
+          <!-- Chatbot 2 - Green Theme -->
+          <div class="chatbot-box chatbot-2">
+            <div id="chat-header">
+              <img src="https://chat.blueaura.in/static/BlueAura_logo.png" alt="BlueAura Logo" id="chat-logo">
+              Support Assistant
+            </div>
+            <div id="chatbox-2"></div>
+            <div id="chat-input-container">
+              <input type="text" id="user-input-2" placeholder="How can we help?" aria-label="Type your message"
+                onkeypress="handleKeyPress(event, 'chatbox-2')">
+              <button id="send-button-2" aria-label="Send message">Send</button>
+            </div>
+          </div>
+          
+          <!-- Chatbot 3 - Purple Theme -->
+          <div class="chatbot-box chatbot-3">
+            <div id="chat-header">
+              <img src="https://chat.blueaura.in/static/BlueAura_logo.png" alt="BlueAura Logo" id="chat-logo">
+              Sales Bot
+            </div>
+            <div id="chatbox-3"></div>
+            <div id="chat-input-container">
+              <input type="text" id="user-input-3" placeholder="Ask about our services..." aria-label="Type your message"
+                onkeypress="handleKeyPress(event, 'chatbox-3')">
+              <button id="send-button-3" aria-label="Send message">Ask</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">BlueAura</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <h3>Address</h3>
+            <p>Munnekolala, Marathahalli, 560037</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 8088845089</span></p>
+            <p><strong>Email:</strong> <span>admin@blueaura.in</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <!-- Social links here -->
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li>AI & Automation</li>
+            <li>Data Science Solutions</li>
+            <li>Cloud Computing</li>
+            <li>IT Consulting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">BlueAura</strong><span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Chatbot JS -->
+  <script>
+    // You'll need to modify your chatbot script to handle multiple instances
+    // This is a simplified version - you'll need to adapt your existing chatbot logic
+    
+    function handleKeyPress(e, chatboxId) {
+      if (e.key === 'Enter') {
+        sendMessage(chatboxId);
+      }
+    }
+    
+    function sendMessage(chatboxId) {
+      const inputId = `user-input-${chatboxId.split('-')[1]}`;
+      const userInput = document.getElementById(inputId);
+      const message = userInput.value.trim();
+      
+      if (message) {
+        // Add user message to chatbox
+        addMessage(chatboxId, message, 'user');
+        
+        // Here you would typically send the message to your chatbot API
+        // and then add the bot's response to the chatbox
+        
+        // Simulate bot response
+        setTimeout(() => {
+          addMessage(chatboxId, "I'm a simulated response from the " + chatboxId + " chatbot.", 'bot');
+        }, 500);
+        
+        userInput.value = '';
+      }
+    }
+    
+    function addMessage(chatboxId, message, sender) {
+      const chatbox = document.getElementById(chatboxId);
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message', sender);
+      messageElement.textContent = message;
+      chatbox.appendChild(messageElement);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+    
+    // Initialize chatbots
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add welcome messages to each chatbot
+      addMessage('chatbox-1', 'Hello! I\'m the standard BlueAura chatbot. How can I help you today?', 'bot');
+      addMessage('chatbox-2', 'Welcome to BlueAura support! What questions can I answer for you?', 'bot');
+      addMessage('chatbox-3', 'Hi there! Interested in our services? Ask me anything!', 'bot');
+      
+      // Set up event listeners for each send button
+      document.getElementById('send-button-1').addEventListener('click', () => sendMessage('chatbox-1'));
+      document.getElementById('send-button-2').addEventListener('click', () => sendMessage('chatbox-2'));
+      document.getElementById('send-button-3').addEventListener('click', () => sendMessage('chatbox-3'));
+    });
+  </script>
+</body>
+</html>
